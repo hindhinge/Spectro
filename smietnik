@@ -1,0 +1,304 @@
+import sounddevice as sd
+import simpleaudio as sa
+import pyaudio
+import wave
+############play sounds
+audio = sine1 * (2**15 - 1) / np.max(np.abs(sine1))
+audio = audio.astype(np.int16)
+
+play_obj = sa.play_buffer(audio, 1, 2, fs)
+play_obj.wait_done()
+###########record sound
+chunk = 1024  # Record in chunks of 1024 samples
+sample_format = pyaudio.paInt16  # 16 bits per sample
+channels = 2
+fs = 44100  # Record at 44100 samples per second
+seconds = 3
+filename = "output.wav"
+
+p = pyaudio.PyAudio()  # Create an interface to PortAudio
+
+print('Recording')
+
+stream = p.open(format=sample_format,
+                channels=channels,
+                rate=fs,
+                frames_per_buffer=chunk,
+                input=True)
+
+frames = []  # Initialize array to store frames
+
+# Store data in chunks for 3 seconds
+for i in range(0, int(fs / chunk * seconds)):
+    data = stream.read(chunk)
+    frames.append(data)
+
+# Stop and close the stream
+stream.stop_stream()
+stream.close()
+# Terminate the PortAudio interface
+p.terminate()
+
+print('Finished recording')
+
+# Save the recorded data as a WAV file
+wf = wave.open(filename, 'wb')
+wf.setnchannels(channels)
+wf.setsampwidth(p.get_sample_size(sample_format))
+wf.setframerate(fs)
+wf.writeframes(b''.join(frames))
+wf.close()
+
+#########3baiscs
+from mathfunctions import *
+import matplotlib.pylab as plt
+import numpy as np
+
+N = 100
+fs = 100
+time = genTime(N, fs)
+noise = genNoise(N, 20)
+sine1 = genSin(time, 4, 22, 0)
+sine2 = genSin(time, 1, 2, 0)
+time2 = genTime(N * 2, fs)
+sine = np.concatenate((sine1, sine2))
+rfrq = genRfreq(N, fs)
+dft = genFft(sine, N)
+
+plt.plot(rfrq[0:int(N / 2) + 1], dft[1])
+# plt.plot(time,sine1,time,sine2)
+#plt.plot(time2, sine)
+plt.xlabel('Angle [rad]')
+plt.ylabel('sin(x)')
+plt.axis('tight')
+plt.show()
+########################basics 2
+from mathfunctions import *
+import matplotlib.pylab as plt
+import numpy as np
+from scipy.io.wavfile import read
+import simpleaudio as sa
+N = 44100
+fs = 44100
+sine_time = genTime(N,fs)
+sines = []
+for i in range(10):
+    sines.append(genSin(sine_time,100,i+1,0))
+plot_time = genPlotTime(sines,fs)
+sine = np.concatenate((sines))
+
+plt.plot(plot_time,sine)
+plt.axis('tight')
+plt.show()
+
+#audio = sine * (2**15 - 1) / np.max(np.abs(sine))
+#audio = audio.astype(np.int16)
+#play_obj = sa.play_buffer(audio, 1, 2, fs)
+#play_obj.wait_done()
+
+rfrq = genRfreq(N*10, fs)
+dft = genFft(sine,N)
+
+plt.plot(rfrq[0:int(rfrq.size/2)+1],dft[1])
+plt.axis('tight')
+plt.show()
+
+slices = sliceAudio(sine,fs)
+for slice in slices:
+    plt.plot(sine_time, slice)
+    plt.axis('tight')
+    plt.show()
+
+ ###################fresh new one
+ from mathfunctions import *
+import matplotlib.pylab as plt
+import numpy as np
+from scipy.io.wavfile import read
+import simpleaudio as sa
+from record import Recording
+import pyaudio
+from play import *
+N = 44100
+fs = 44100
+#rec = Recording(1024, pyaudio.paInt16, 1, 44100, 3, "output.wav")
+#rec.record()
+#rec.save()
+
+sine_time = genTime(N,fs)
+sines = []
+for i in range(10):
+    sines.append(genSin(sine_time,100,(i+1)*1000,0))
+plot_time = genPlotTime(sines,fs)
+sine1 = np.concatenate((sines))
+sine = np.array(sine1,dtype=float)
+
+
+filename = "output.wav"
+record_array = wavToArray(filename)
+split_audio = sliceAudio(sine,fs)
+
+for i in range(len(split_audio)):
+    rfreq = genRfreq(44100,fs)
+    fft = genFft(split_audio[i],N)
+    plt.plot(rfreq[0:fft[1].size], fft[1])
+    plt.axis('tight')
+    plt.show()
+
+#plt.plot(rfrq[0:int(N / 2) + 1], dft[1])
+# plt.plot(time,sine1,time,sine2)
+#plt.plot(time2, sine)
+#plt.xlabel('Angle [rad]')
+#plt.ylabel('sin(x)')
+#plt.axis('tight')
+#plt.show()
+
+
+#################Interface
+# class RectBlock(Widget):
+#     def __init__(self,color, **kwargs):
+#         super(RectBlock, self).__init__(**kwargs)
+#         self.r = color[0]/255
+#         self.g = color[1]/255
+#         self.b = color[2]/255
+#         self.x_size = 8
+#         self.y_size = 8
+#         with self.canvas:
+#                 self.color = Color(r=self.r,g=self.g,b=self.b,a=0.8)  # set the colour to red
+#                 self.rect = Rectangle(size=(self.x_size, self.y_size),pos=(self.parent.pos))
+#
+# class VerticalLine(Widget):
+#     def __init__(self,colornum, **kwargs):
+#         super(VerticalLine, self).__init__(**kwargs)
+#         layout = BoxLayout(orientation = "vertical")
+#         for pixel in range(len(colors[colornum])):
+#             block = RectBlock(colors[colornum][pixel])
+#             block.pos_hint={"top":pixel}
+#             layout.add_widget(block)
+#         self.add_widget(layout)
+#
+#
+# #
+# class MyGrid(Widget):
+#     def __init__(self, **kwargs):
+#         super(MyGrid, self).__init__(**kwargs)
+#         self.lastPosition = 99
+#         self.height = 800
+#         self.width = 800
+#         self.vertical_children = []
+#         layout = BoxLayout(orientation='horizontal')
+#         #Clock.schedule_interval(self.moveLines, 0.5)
+#         #Clock.schedule_once(self.moveLines, 5)
+#         with self.canvas:
+#             # Color(r=0.2,g=0.61,b=0.44,a=1.0)
+#             Color(r=0.0,g=0.0,b=0.0,a=1.0)
+#             Rectangle(pos=(0,0),size=(self.height,self.width))
+#         for i in range(len(colors)-1):
+#             vline = VerticalLine(i)
+#             self.vertical_children.append(vline)
+#         for i in range(len(colors)-1):
+#             vline = self.vertical_children[i]
+#             layout.add_widget(vline)
+#         self.add_widget(layout)
+#         #self.addVerticalLine()
+#         #self.fillVerticalChildren()
+#         #self.addVerticalChildren()
+#
+#
+#     def fillVerticalChildren(self):
+#         for i in range(len(colors)-1):
+#             vline = VerticalLine(self.lastPosition,i)
+#             self.vertical_children.append(vline)
+#             self.lastPosition -= 1
+#     def addVerticalChildren(self):
+#         for vline in self.vertical_children:
+#             self.add_widget(vline)
+#             print(vline.pos)
+#
+#
+#
+#     def addVerticalLine(self):
+#         vline = VerticalLine(self.lastPosition,0,(0,0))
+#         self.vertical_children.append(vline)
+#         self.add_widget(self.vertical_children[0])
+#
+#     def moveLines(self,dt):
+#         print("did it")
+#         vline = self.vertical_children[10]
+#         vline.setPos(0)
+#         vline.canvas.ask_update()
+#         # layout = GridLayout(cols = 87)
+#         # for line in range(len(colors)-1):
+#         #     layout.add_widget(VerticalLine(line))
+#         # self.add_widget(layout)
+#
+
+##########INTERFACE 2 POSUWA SIE
+class RectBlock(Widget):
+    parent_line = ObjectProperty(None, allownone=False)
+    x_pos = NumericProperty(0)
+    y_pos = NumericProperty(0)
+    r = NumericProperty(0)
+    g = NumericProperty(0)
+    b = NumericProperty(0)
+    x_size = NumericProperty(8)
+    y_size = NumericProperty(8)
+
+    def setColor(self,color):
+        self.r = color[0]/255
+        self.g = color[1] / 255
+        self.b = color[2] / 255
+
+    def setPosition(self,x,y):
+        self.x_pos = x
+        self.y_pos = y
+
+
+class VerticalLine(Widget):
+    def __init__(self,linenumber,**kwargs):
+        super(VerticalLine, self).__init__(**kwargs)
+        self.linenumber=linenumber
+        Clock.schedule_interval(self.calculate, 0.5)
+
+
+    def addRectangles(self,colornum):
+        for pixel in range(100):
+            rect = RectBlock()
+            rect.setColor((255,0,255))
+            rect.setPosition(self.linenumber*rect.x_size,pixel*rect.y_size)
+            self.add_widget(rect)
+            print(rect.pos)
+        print(len(self.children))
+
+    def setPosition(self,x):
+        self.pos = (x,self.y)
+        for rect in self.children:
+            ypos = rect.pos[1]
+            rect.setPosition(x,ypos)
+
+    def calculate(self,dt):
+        print('elo')
+        xpos = self.pos[0]
+        self.setPosition(xpos+1)
+
+
+class SpectroApp(App):
+    def build(self):
+        vline = VerticalLine(0)
+        vline.addRectangles(0)
+        return vline
+
+
+SpectroApp().run()
+
+########RECTBLOCK KIVY
+<RectBlock>:
+    pos: self.x_pos,self.y_pos
+    canvas:
+        Color:
+            rgba: root.r,root.g,root.b,0.8
+        Rectangle:
+            pos: root.pos
+            size: root.x_size,root.y_size
+
+
+######################WORKING RECTBLOCK
