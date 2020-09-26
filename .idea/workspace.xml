@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87725d76-951a-49e7-b32d-87c3658fbcc5" name="Default Changelist" comment="" />
+    <list default="true" id="87725d76-951a-49e7-b32d-87c3658fbcc5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +31,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1XwYVNbpqFmvDhLQpwzGBmVTzjJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -36,11 +43,72 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.test5">
+  <component name="RunManager" selected="Python.GUI_Interface">
+    <configuration name="GUI_Interface" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Spectro" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUI_Interface.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="GUI_MathController" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Spectro" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUI_MathController.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="GUI_SpectroApp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Spectro" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUI_SpectroApp.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="Spectro" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -63,76 +131,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mic_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Spectro" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mic_test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Spectro" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test3.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Spectro" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test4.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="test5" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Spectro" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -172,11 +177,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test5" />
+        <item itemvalue="Python.GUI_Interface" />
+        <item itemvalue="Python.GUI_SpectroApp" />
+        <item itemvalue="Python.GUI_MathController" />
         <item itemvalue="Python.test6" />
-        <item itemvalue="Python.mic_test" />
-        <item itemvalue="Python.test3" />
-        <item itemvalue="Python.test4" />
+        <item itemvalue="Python.test5" />
       </list>
     </recent_temporary>
   </component>
@@ -213,6 +218,13 @@
       <workItem from="1595006324522" duration="200000" />
       <workItem from="1595006827735" duration="204000" />
       <workItem from="1595064734910" duration="15062000" />
+      <workItem from="1595105670347" duration="392000" />
+      <workItem from="1595408123702" duration="86000" />
+      <workItem from="1595592531578" duration="218000" />
+      <workItem from="1600181683862" duration="2990000" />
+      <workItem from="1600270489037" duration="3504000" />
+      <workItem from="1600701802105" duration="1819000" />
+      <workItem from="1601114220065" duration="6698000" />
     </task>
     <servers />
   </component>
@@ -220,50 +232,58 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="739" y="261" key="FileChooserDialogImpl" timestamp="1594378302076">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601115149894">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1594378302076" />
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1595084220435">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1601115149894" />
+    <state x="739" y="261" key="FileChooserDialogImpl" timestamp="1601114535865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1595084220435" />
-    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1595084220435">
+    <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1601114535865" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1600274012779">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1595084220435" />
-    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1595084220435">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1600274012779" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1600274012779">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1595084220435" />
-    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1595084220435">
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1600274012779" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1600274012778">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1595084220435" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1595084220435">
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1600274012778" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1600274012779">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1595084220435" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1595084220435">
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1600274012779" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1600274012779">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1595084220435" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1595084220435">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1600274012779" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1600274012779">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1595084220435" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1595084220435">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1600274012779" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1600274012779">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1595084220435" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1600274012779" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1600274012779">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1600274012779" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1593783067566">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1593783067566" />
-    <state x="661" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1595064737708">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1601114959011">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1595064737708" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1601114959011" />
+    <state x="661" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1601114241223">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1601114241223" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -285,6 +305,8 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Spectro$test4.coverage" NAME="test4 Coverage Results" MODIFIED="1591453156017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Spectro$test5.coverage" NAME="test5 Coverage Results" MODIFIED="1595081439211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Spectro$GUI_MathController.coverage" NAME="GUI_MathController Coverage Results" MODIFIED="1600272054378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Spectro$GUI_SpectroApp.coverage" NAME="GUI_SpectroApp Coverage Results" MODIFIED="1600273886778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Spectro$test3.coverage" NAME="test3 Coverage Results" MODIFIED="1584379772778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Spectro$main.coverage" NAME="main Coverage Results" MODIFIED="1584370003003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
