@@ -7,7 +7,8 @@ from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
 from GUI_RectBlock import SPEC_WIDTH,SPEC_HEIGHT
 from GUI_StartScreen import StartScreen
-from GUI_SpectroApp import Spectrogram
+from GUI_MicCapture import MicCapture
+from GUI_Xaxis import Xaxis
 
 from functools import partial
 # #########GLOBALS##########
@@ -29,7 +30,7 @@ class Interface(Widget):
     def __init__(self, **kwargs):
         super(Interface, self).__init__(**kwargs)
         self.screen_start = StartScreen(self,WINDOW_WIDTH,WINDOW_HEIGHT)
-        self.spectrogram = Spectrogram()
+        self.mic_capture = MicCapture(self,WINDOW_WIDTH,WINDOW_HEIGHT,OPTIONS_WIDTH,OPTIONS_HEIGHT,SPEC_WIDTH,SPEC_HEIGHT)
         self.width = WINDOW_WIDTH
         self.height = WINDOW_HEIGHT
 
@@ -44,7 +45,7 @@ class Interface(Widget):
 
     def show_mic(self):
         self.layout_main.remove_widget(self.screen_start)
-        self.layout_main.add_widget(self.spectrogram)
+        self.layout_main.add_widget(self.mic_capture)
 
     def show_file(self):
         print("Unavailable")
@@ -53,7 +54,8 @@ class SpectroApp(App):
     def build(self):
         interface = Interface()
         return interface
-
+        # xaxis = Xaxis(WINDOW_WIDTH)
+        # return xaxis
 
 setWindowDimension(WINDOW_WIDTH, WINDOW_HEIGHT)
 SpectroApp().run()

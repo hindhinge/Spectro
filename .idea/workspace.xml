@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87725d76-951a-49e7-b32d-87c3658fbcc5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI_Interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_Interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI_MicCapture.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_MicCapture.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI_RectBlock.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_RectBlock.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI_SpectroApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_SpectroApp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/record.py" beforeDir="false" afterPath="$PROJECT_DIR$/record.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +228,7 @@
       <workItem from="1600181683862" duration="2990000" />
       <workItem from="1600270489037" duration="3504000" />
       <workItem from="1600701802105" duration="1819000" />
-      <workItem from="1601114220065" duration="6698000" />
+      <workItem from="1601114220065" duration="14952000" />
     </task>
     <servers />
   </component>
