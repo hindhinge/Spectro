@@ -13,7 +13,7 @@ REC_FS = 44100  # Input stream sampling frequency. Use 44100 to get final freque
 REC_SECONDS = 1  # Seconds of recording to capture. Not used if live microphone signal is the source
 REC_FILENAME = "mic_test.wav"  # Output file name. Not used if live microphone signal is the source
 # #########SPECTROGRAPH OPTIONS##########
-SPEC_LINEWIDTH = 2  # Width of a line created after one data chunk is processed
+SPEC_LINEWIDTH = 5 # Width of a line created after one data chunk is processed
 SPEC_WIDTH = 1000  # Default 1000
 SPEC_HEIGHT = 800  # Default 800
 SPEC_REFRESHDELETE = 3 * SPEC_LINEWIDTH * SPEC_HEIGHT  # Amount of data to delete from texture array if spectrogram

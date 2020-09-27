@@ -75,8 +75,8 @@ class MathController(Widget):
 
     def genColorsDB(self,dbs):
         signal = dbs
-        max_value = 15
-        min_value = -5
+        max_value = 4
+        min_value = -10
         output = []
         resolution = (max_value - min_value) / 1275
         for value in signal:

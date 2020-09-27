@@ -53,11 +53,11 @@ class StartScreen(Widget):
         # layout_buttons.spacing = int(WINDOW_WIDTH/4)
         layout_buttons.padding = [50, int(self.WINDOW_HEIGHT / 6), 50, int(self.WINDOW_HEIGHT / 3)]
 
-        button_file = Button(text="Use audio from file")
+        button_file = Button(text="OPTIONS")
         button_file.size_hint = (0.3, 0.5)
         button_file.bind(on_press=partial(self.use_file, button_file))
 
-        button_mic = Button(text="Use audio from microphone")
+        button_mic = Button(text="START")
         button_mic.size_hint = (0.3, 0.5)
         button_mic.bind(on_press=partial(self.use_mic, button_mic))
 
