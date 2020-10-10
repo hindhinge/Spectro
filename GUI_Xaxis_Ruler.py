@@ -9,21 +9,21 @@ from kivy.clock import Clock
 
 from math import ceil
 
-from GUI_SpectroApp import TIMEFRAME
 
 class Ruler(Widget):
-    def __init__(self,width,height,window_height,linewidth,options_width, **kwargs):
+    def __init__(self,width,height,window_width,window_height,linewidth,options_width,timeframe, **kwargs):
         super(Ruler, self).__init__(**kwargs)
         self.iteration = 1
 
-        self.WINDOW_WIDTH = width
+        self.WINDOW_WIDTH = int(window_width)
         self.OPTIONS_HEIGHT = height
-        self.WINDOW_HEIGHT = window_height
+        self.WINDOW_HEIGHT = int(window_height)
         self.OPTIONS_WIDTH = options_width
+        self.TIMEFRAME = timeframe
 
         self.width = width
         self.height = height
-        self.SPEC_LINEWIDTH = linewidth
+        self.SPEC_LINEWIDTH = int(linewidth)
         self.baseNames = {1: ['timescale_1.png', 430],
                           2: ['timescale_2.png', 430],
                           3: ['timescale_3.png', 645],
@@ -40,8 +40,9 @@ class Ruler(Widget):
 
         self.getBase()
         self.createRulers()
+        print('ruler created')
 
-        Clock.schedule_interval(self.moveTexture, TIMEFRAME)
+        Clock.schedule_interval(self.moveTexture, self.TIMEFRAME)
 
     def resetIterations(self):
         self.resetDone = True

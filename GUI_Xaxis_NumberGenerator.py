@@ -9,17 +9,17 @@ from kivy.clock import Clock
 
 from math import ceil
 
-from GUI_SpectroApp import TIMEFRAME
-
 class NumberGenerator(Widget):
-    def __init__(self,width,height,window_height,linewidth,options_width, **kwargs):
+    def __init__(self,width,height,window_height,linewidth,options_width,timeframe, **kwargs):
         super(NumberGenerator, self).__init__(**kwargs)
         self.iteration = 1
         self.width = width
         self.height = height
-        self.SPEC_LINEWIDTH = linewidth
-        self.OPTIONS_WIDTH = options_width
-        self.WINDOW_HEIGHT = window_height
+        self.SPEC_LINEWIDTH = int(linewidth)
+        self.OPTIONS_WIDTH = int(options_width)
+        self.WINDOW_HEIGHT = int(window_height)
+        self.TIMEFRAME = timeframe
+        print('key is {0}, value is {1}, type is {2}'.format("timeframe ngeneratr",self.TIMEFRAME,type(self.TIMEFRAME)))
 
         self.baseWidths = {1: 430,
                           2: 430,
@@ -32,10 +32,9 @@ class NumberGenerator(Widget):
         self.iterationLimit = int(self.baseWidths[self.SPEC_LINEWIDTH]/self.SPEC_LINEWIDTH)
         self.numberLimit = ceil((self.width/self.baseWidths[self.SPEC_LINEWIDTH])*self.secPerTexture[self.SPEC_LINEWIDTH])
         self.currentNumber = 0
-
         self.appendNumber()
 
-        Clock.schedule_interval(self.calculate, TIMEFRAME)
+        Clock.schedule_interval(self.calculate,43.06640625)
 
     def appendNumber(self):
         label = Label(text = str(self.currentNumber), pos = (self.width - 45 - self.OPTIONS_WIDTH,self.WINDOW_HEIGHT-50))

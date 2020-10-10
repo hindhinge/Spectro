@@ -14,9 +14,11 @@ from kivy.uix.widget import Widget
 
 
 class MathController(Widget):
-    def __init__(self,**kwargs):
+    def __init__(self,parent,**kwargs):
         super(MathController, self).__init__(**kwargs)
         self.iter = 1
+        self.interface_widget = parent
+
         self.height = SPEC_HEIGHT
         self.width = SPEC_WIDTH
         self.rec = Recording(REC_CHUNK,REC_FORMAT,REC_CHANNELS,REC_FS,REC_SECONDS,REC_FILENAME)

@@ -5,7 +5,7 @@ from kivy.uix.boxlayout import BoxLayout
 from functools import partial
 
 class StartScreen(Widget):
-    def __init__(self, parent,width,height, **kwargs):
+    def __init__(self, parent, **kwargs):
         super(StartScreen, self).__init__(**kwargs)
         self.txt_dict = {'welcome': 'Welcome to Spectro',
                          'description': 'This application allows you to create spectrograms from sound files located on your computer or directly from your microphone.',
@@ -14,8 +14,10 @@ class StartScreen(Widget):
         self.parent_widget = parent
         self.font_size_desc = 15
         self.font_size_title = 40
-        self.WINDOW_HEIGHT = height
-        self.WINDOW_WIDTH = width
+        self.WINDOW_HEIGHT = int(self.parent_widget.getOptions().get('wheight'))
+        #  self.WINDOW_HEIGHT = 800
+        self.WINDOW_WIDTH = int(self.parent_widget.getOptions().get('wwidth'))
+        #  self.WINDOW_WIDTH = 1000
 
         self.layout_start = BoxLayout()
         self.layout_start.orientation = 'vertical'
@@ -55,7 +57,7 @@ class StartScreen(Widget):
 
         button_file = Button(text="OPTIONS")
         button_file.size_hint = (0.3, 0.5)
-        button_file.bind(on_press=partial(self.use_file, button_file))
+        button_file.bind(on_press=partial(self.show_options, button_file))
 
         button_mic = Button(text="START")
         button_mic.size_hint = (0.3, 0.5)
@@ -77,8 +79,8 @@ class StartScreen(Widget):
         signature_layout.add_widget(textbox_madeby)
         self.layout_start.add_widget(signature_layout)
 
-    def use_file(self, instance, *args):
-        self.parent_widget.show_file()
+    def show_options(self, instance, *args):
+        self.parent_widget.show_options()
 
     def use_mic(self, instance, *args):
         self.parent_widget.show_mic()
