@@ -50,7 +50,7 @@ class Recording:
         print('Finished recording')
 
     def recordChunk(self):
-        print('Recording chunk')
+        # print('Recording chunk')
         data = self.stream.read(self.chunk, exception_on_overflow = False) #  exception_on_overflow = False used to get rid of exception when we are recording at FS > 44100
         return numpy.fromstring(data, 'Int16')
 

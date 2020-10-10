@@ -3,10 +3,9 @@ import pyaudio
 from array import array
 
 from record import Recording
-from GUI_RectBlock import RectBlock
+from GUI_RectBlock import *
 from mathfunctions import genRfreq
 from math import e, pi
-from GUI_RectBlock import REC_FS,REC_CHUNK, SPEC_HEIGHT, SPEC_WIDTH,REC_FORMAT,REC_CHANNELS,REC_SECONDS,REC_FILENAME,SPEC_LINEWIDTH
 
 from kivy.uix.widget import Widget
 
@@ -18,24 +17,25 @@ class MathController(Widget):
         super(MathController, self).__init__(**kwargs)
         self.iter = 1
         self.interface_widget = parent
-
-        self.height = SPEC_HEIGHT
-        self.width = SPEC_WIDTH
-        self.rec = Recording(REC_CHUNK,REC_FORMAT,REC_CHANNELS,REC_FS,REC_SECONDS,REC_FILENAME)
+        self.options = self.interface_widget.getOptions()
+        self.height = self.options.getInt('sheight')
+        self.width = self.options.getInt('swidth')
+        self.rec = Recording(self.options.getInt('chunk'),pyaudio.paInt16,self.options.getInt('channels'),self.options.getInt('fs'),1,'mic_test.wav')
         self.rec.openStream()
         self.texture = self.getBlackTexture()
         self.rect = self.createRectBlock()
-        self.rfreq = genRfreq(REC_CHUNK,REC_FS)
+        self.rfreq = genRfreq(self.options.getInt('chunk'),self.options.getInt('fs'))
 
     def createRectBlock(self):
-        block = RectBlock(self.texture,SPEC_HEIGHT,SPEC_LINEWIDTH)
+        block = RectBlock(self.texture,self.options.getInt('sheight'),self.options.getInt('sline'),self.options)
+        block.writeOptions(-1*(self.options.getInt('sheight')/2) , self.options.getInt('swidth')-(self.options.getInt('sheight')/2))
         self.add_widget(block)
         return block
 
     def widenRectBlock(self,tex):
-        if self.rect.height < SPEC_WIDTH:
-            self.rect.increaseWidthFlipped(SPEC_LINEWIDTH)
-            self.rect.moveToLeftFlipped(SPEC_LINEWIDTH)
+        if self.rect.height < self.options.getInt('swidth'):
+            self.rect.increaseWidthFlipped(self.options.getInt('sline'))
+            self.rect.moveToLeftFlipped(self.options.getInt('sline'))
         self.rect.setTexture(tex)
         self.rect.update_rect()
         self.rect.update()
@@ -58,12 +58,12 @@ class MathController(Widget):
 
     def getDft(self):
         chunk = self.rec.recordChunk()
-        dft = self.genFft(chunk, REC_FS)
+        dft = self.genFft(chunk, self.options.getInt('fs'))
         return dft[1]
 
     def toDecibels(self,chunk):
         output = []
-        sig = chunk[0:SPEC_HEIGHT]
+        sig = chunk[0:self.options.getInt('sheight')]
         sig = sig[::-1]
         for value in sig:
             abs = np.absolute(value)
@@ -112,14 +112,14 @@ class MathController(Widget):
         for i in range(len(color)):
             rgb=color[i]
             if type(rgb) != int:
-                for j in range(SPEC_LINEWIDTH):
+                for j in range(self.options.getInt('sline')):
                     for number in rgb:
                         buffer.append(number)
         arr = array('B',buffer)
         return arr
 
     def getBlackTexture(self):
-        size = 3 * SPEC_LINEWIDTH * SPEC_HEIGHT
+        size = 3 * self.options.getInt('sline') * self.options.getInt('sheight')
         buf = []
         for i in range(size):
             buf.append(255)
@@ -128,7 +128,7 @@ class MathController(Widget):
         arr = array('B',buf)
         return arr
     def getBlueTexture(self):
-        size = 3 * SPEC_LINEWIDTH * SPEC_HEIGHT
+        size = 3 * self.options.getInt('sline') * self.options.getInt('sheight')
         buf = []
         for i in range(size):
             buf.append(0)

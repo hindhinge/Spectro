@@ -11,10 +11,10 @@ class Spectrogram(Widget):
         super(Spectrogram, self).__init__(**kwargs)
         self.interface_widget = parent
         self.iter = 1
-        self.width = self.interface_widget.getOptions().get('swidth')
-        self.height = self.interface_widget.getOptions().get('sheight')
-        self.chunk = int(self.interface_widget.getOptions().get('chunk'))
-        self.fs = int(self.interface_widget.getOptions().get('fs'))
+        self.width = self.interface_widget.getOptions().getInt('swidth')
+        self.height = self.interface_widget.getOptions().getInt('sheight')
+        self.chunk = self.interface_widget.getOptions().getInt('chunk')
+        self.fs = self.interface_widget.getOptions().getInt('fs')
         self.timeframe = 1/(self.fs/self.chunk)
         self.control = MathController(self.interface_widget)
         self.add_widget(self.control)

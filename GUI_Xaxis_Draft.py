@@ -9,99 +9,39 @@ from kivy.clock import Clock
 
 from math import ceil
 
-from GUI_SpectroApp import TIMEFRAME
-from GUI_RectBlock import SPEC_LINEWIDTH
+from GUI_Xaxis_NumberGenerator import NumberGenerator
+from GUI_Xaxis_Ruler import Ruler
+
 
 class Xaxis(Widget):
-    def __init__(self,width,height, **kwargs):
+    def __init__(self, parent, **kwargs):
         super(Xaxis, self).__init__(**kwargs)
-        print(TIMEFRAME)
         self.iteration = 1
+        self.interface_widget = parent
+        self.options = self.interface_widget.getOptions()
 
-        self.WINDOW_WIDTH = width
-        self.OPTIONS_HEIGHT = height
+        self.WINDOW_WIDTH = int(self.options.get('wwidth'))
+        self.OPTIONS_HEIGHT = 100
+        self.WINDOW_HEIGHT = int(self.options.get('wheight'))
+        self.OPTIONS_WIDTH = 50
+        self.SPEC_LINEWIDTH = int(self.options.get('sline'))
+        self.TIMEFRAME = 1 / (int(self.options.get('chunk')) / int(self.options.get('fs')))
 
-        self.width = width
-        self.height = height
+        self.width = int(self.options.get('wwidth'))
+        self.height = self.OPTIONS_HEIGHT
 
-        self.layout_numbers = BoxLayout()
-        self.layout_numbers.size = (self.width,self.height)
-        self.layout_numbers.pos = (50, 500)
-        self.layout_numbers.orientation = 'horizontal'
-        self.layout_numbers.add_widget(Label(text='ijo ijo pierwszy', font_size = 30))
-        self.layout_numbers.add_widget(Label(text='ijo ijo drugi', font_size=40))
-        self.add_widget(self.layout_numbers)
+        self.layout_xaxis = BoxLayout()
+        self.layout_xaxis.size = (self.width, self.height)
+        self.layout_xaxis.orientation = 'vertical'
+        self.layout_xaxis.spacing = 0
 
-        self.baseNames = {1:['timescale_1.png',430],
-                          2:['timescale_2.png',430],
-                          3:['timescale_3.png',645],
-                          4:['timescale_4.png',516],
-                          5:['timescale_5.png',645]}
-        self.secPerTexture = {1:10,2:5,3:5,4:3,5:3}
-        self.basename = ''
-        self.basewidth = 0
-        self.rulers_amount = 0
-        self.positionsStart = ()
-        self.positionsReset = ()
-        self.texture_base = None
-        self.resetDone = False
-        self.rulers = []
+        self.layout_xaxis.add_widget(
+            NumberGenerator(self.WINDOW_WIDTH, 35, self.WINDOW_HEIGHT, self.SPEC_LINEWIDTH, self.OPTIONS_WIDTH,
+                            self.TIMEFRAME))
+        self.layout_xaxis.add_widget(
+            Ruler(self.WINDOW_WIDTH, 15, self.WINDOW_WIDTH, self.WINDOW_HEIGHT, self.SPEC_LINEWIDTH, self.OPTIONS_WIDTH,
+                  self.TIMEFRAME))
 
-        with self.layout_numbers.canvas:
-            Color(1.0,0.0,0.0)
-            Rectangle(size=self.size,pos = (100,100))
-
-        self.getBase()
-        self.createRulers()
-
-        Clock.schedule_interval(self.moveTexture, TIMEFRAME)
-
-    def resetIterations(self):
-        self.resetDone = True
-        self.iteration = 1
-
-
-    def getBase(self):
-        self.basename = self.baseNames[SPEC_LINEWIDTH][0]
-        self.basewidth = self.baseNames[SPEC_LINEWIDTH][1]
-        self.texture_base = Image(self.basename).texture
-
-    def createRulers(self):
-        self.rulers_amount = ceil(self.WINDOW_WIDTH/self.basewidth) + 1
-        positionsStart = []
-        positionsReset = []
-        for i in range(self.rulers_amount):
-            posS = self.WINDOW_WIDTH + (i*self.basewidth)
-            posR = i*self.basewidth
-            positionsStart.append(posS)
-            positionsReset.append(posR)
-        self.positionsStart = tuple(positionsStart)
-        self.positionsReset = tuple(positionsReset)
-        for i in range(self.rulers_amount):
-            self.rulers.append(Rectangle(texture=self.texture_base, pos=(self.WINDOW_WIDTH-self.iteration,0), size=(self.basewidth, 50)))
-
-    def getPositions(self):
-        positions = []
-        for i in range(self.rulers_amount):
-            if self.resetDone == False:
-                pos = self.positionsStart[i] - (self.iteration*SPEC_LINEWIDTH)
-            else:
-                pos = self.positionsReset[i] - (self.iteration * SPEC_LINEWIDTH)
-            if pos <= self.basewidth * -1:
-                self.resetIterations()
-            positions.append(pos)
-        return tuple(positions)
-
-
-    def moveTexture(self,dt):
-        positions = self.getPositions()
-        moved = 0
-        self.canvas.clear()
-        with self.canvas:
-            for ruler in self.rulers:
-                print("ruler " + str(moved) + " position is " + str(positions[moved]))
-                ruler = Rectangle(texture=self.texture_base, pos=(positions[moved],100), size=(self.basewidth, 50))
-                moved += 1
-        self.iteration += 1
+        self.add_widget(self.layout_xaxis)
 
 

@@ -28,10 +28,11 @@ class Interface(Widget):
         self.screen_start = StartScreen(self)
         self.screen_options = OptionsScreen(self)
         self.mic_capture = None
-        self.WINDOW_WIDTH = self.options.get('wwidth')
-        self.WINDOW_HEIGHT = self.options.get('wheight')
+        self.WINDOW_WIDTH = self.options.getInt('wwidth')
+        self.WINDOW_HEIGHT = self.options.getInt('wheight')
         self.width = self.WINDOW_WIDTH
         self.height = self.WINDOW_HEIGHT
+        Window.size = (self.WINDOW_WIDTH, self.WINDOW_HEIGHT)
 
 
         self.layout_main = BoxLayout()
@@ -74,17 +75,12 @@ class Interface(Widget):
 
 class SpectroApp(App):
     def build(self):
-        # interface = Interface()
-        # interface.setWindowDimension(interface.WINDOW_WIDTH,interface.WINDOW_HEIGHT)
-        # return interface
+        interface = Interface()
+        interface.setWindowDimension(interface.WINDOW_WIDTH,interface.WINDOW_HEIGHT)
+        return interface
 
-
-        # xaxis = Xaxis(WINDOW_WIDTH,OPTIONS_HEIGHT,SPEC_LINEWIDTH)
-        # return xaxis
         # options = OptionsScreen(self,WINDOW_WIDTH,WINDOW_HEIGHT)
         # return options
-        ngenerator = NumberGenerator(1000,35,800,1,50,(1/(1024/44100)))
-        return ngenerator
 
 SpectroApp().run()
         

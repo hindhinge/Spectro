@@ -46,7 +46,8 @@ class MicCapture(Widget):
         layout_options.size_hint_min_y = self.OPTIONS_HEIGHT
         layout_options.size_hint_max_y = self.OPTIONS_HEIGHT
 
-        button_file = self.xaxis
+        # button_file = self.xaxis
+        button_file = BoxLayout()
         layout_options.add_widget(button_file)
         
         self.layout_mic.add_widget(layout_options)

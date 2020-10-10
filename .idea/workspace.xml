@@ -6,13 +6,12 @@
       <change beforePath="$PROJECT_DIR$/GUI_Interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_Interface.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI_MathController.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_MathController.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI_MicCapture.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_MicCapture.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI_OptionsScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_OptionsScreen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI_RectBlock.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_RectBlock.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI_SpectroApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_SpectroApp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI_StartScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_StartScreen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI_Xaxis.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_Xaxis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI_Xaxis_NumberGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_Xaxis_NumberGenerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI_Xaxis_Ruler.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_Xaxis_Ruler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI_Xaxis_Draft.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_Xaxis_Draft.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options.txt" beforeDir="false" afterPath="$PROJECT_DIR$/options.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/record.py" beforeDir="false" afterPath="$PROJECT_DIR$/record.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +247,7 @@
       <workItem from="1601804943697" duration="17003000" />
       <workItem from="1601909731987" duration="3445000" />
       <workItem from="1602267449361" duration="1692000" />
-      <workItem from="1602316984275" duration="8365000" />
+      <workItem from="1602316984275" duration="16613000" />
     </task>
     <servers />
   </component>
@@ -264,38 +263,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1601114535865" />
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1601915028425">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1602333932996">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1601915028425" />
-    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1601915028425">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1602333932996" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1602333932996">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1601915028425" />
-    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1601915028425">
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1602333932996" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1602333932996">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1601915028425" />
-    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1601915028425">
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1602333932996" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1602333932996">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1601915028425" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1601915028426">
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1602333932996" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1602333932996">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1601915028426" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1601915028425">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1602333932996" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1602333932996">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1601915028425" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1601915028425">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1602333932996" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1602333932996">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1601915028425" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1601915028426">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1602333932996" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1602333932996">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1601915028426" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1602333932996" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1593783067566">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -336,7 +335,7 @@
     <SUITE FILE_PATH="coverage/Spectro$GUI_MathController.coverage" NAME="GUI_MathController Coverage Results" MODIFIED="1600272054378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Spectro$GUI_SpectroApp.coverage" NAME="GUI_SpectroApp Coverage Results" MODIFIED="1600273886778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Spectro$test3.coverage" NAME="test3 Coverage Results" MODIFIED="1584379772778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Spectro$GUI_Interface.coverage" NAME="GUI_Interface Coverage Results" MODIFIED="1601909941624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Spectro$GUI_Interface.coverage" NAME="GUI_Interface Coverage Results" MODIFIED="1602331288176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Spectro$main.coverage" NAME="main Coverage Results" MODIFIED="1584370003003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
