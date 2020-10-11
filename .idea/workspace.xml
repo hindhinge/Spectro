@@ -4,14 +4,15 @@
     <list default="true" id="87725d76-951a-49e7-b32d-87c3658fbcc5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI_Interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_Interface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI_MathController.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_MathController.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI_MicCapture.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_MicCapture.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI_OptionsScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_OptionsScreen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI_RectBlock.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_RectBlock.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI_SpectroApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_SpectroApp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI_Xaxis.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_Xaxis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI_Xaxis_Draft.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_Xaxis_Draft.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI_Xaxis_NumberGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_Xaxis_NumberGenerator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI_Xaxis_Ruler.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_Xaxis_Ruler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/options.txt" beforeDir="false" afterPath="$PROJECT_DIR$/options.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/record.py" beforeDir="false" afterPath="$PROJECT_DIR$/record.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smietnik" beforeDir="false" afterPath="$PROJECT_DIR$/smietnik" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,6 +249,7 @@
       <workItem from="1601909731987" duration="3445000" />
       <workItem from="1602267449361" duration="1692000" />
       <workItem from="1602316984275" duration="16613000" />
+      <workItem from="1602415934095" duration="6482000" />
     </task>
     <servers />
   </component>
@@ -303,14 +305,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1601114959011" />
-    <state x="661" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1602317067449">
+    <state x="661" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1602415936207">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1602317067449" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1601810564787">
+    <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1602415936207" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1602422308926">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1601810564787" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.180.1440.860@0.0.1920.1040" timestamp="1602422308926" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

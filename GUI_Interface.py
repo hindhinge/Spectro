@@ -71,12 +71,18 @@ class Interface(Widget):
         self.screen_start = StartScreen(self)
         Window.size = (self.WINDOW_WIDTH,self.WINDOW_HEIGHT)
         self.layout_main.add_widget(self.screen_start)
+        
+    def back_spectro(self):
+        self.mic_capture.clear_widgets()
+        self.layout_main.remove_widget(self.mic_capture)
+        self.layout_main.add_widget(self.screen_start)
 
 
 class SpectroApp(App):
     def build(self):
         interface = Interface()
         interface.setWindowDimension(interface.WINDOW_WIDTH,interface.WINDOW_HEIGHT)
+        # xaxis = Xaxis(interface)
         return interface
 
         # options = OptionsScreen(self,WINDOW_WIDTH,WINDOW_HEIGHT)

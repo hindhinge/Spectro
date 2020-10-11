@@ -1,8 +1,8 @@
-sheight:700
-swidth:950
-wheight:800
-wwidth:1000
-sline:1
+sheight:900
+swidth:1250
+wheight:1000
+wwidth:1300
+sline:2
 yaxis:log
 zaxis:lin
 blackman:0

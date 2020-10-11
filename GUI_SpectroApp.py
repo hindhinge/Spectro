@@ -18,6 +18,8 @@ class Spectrogram(Widget):
         self.timeframe = 1/(self.fs/self.chunk)
         self.control = MathController(self.interface_widget)
         self.add_widget(self.control)
-        Clock.schedule_interval(self.control.microProcessing,self.timeframe)
+        self.clock = Clock.schedule_interval(self.control.microProcessing,self.timeframe)
 
+    def stopClock(self):
+        self.clock.cancel()
 

@@ -198,7 +198,7 @@ class OptionsScreen(Widget):
         backbutton.pos_hint['left'] = 0.0
         backbutton.bind(on_press=partial(self.backButtonPress, backbutton))
 
-        self.errorLabel.text = 'testuej w chuj dużo tekstu żeby zobaczyć ile tego gówna się może zmieścić na dole jak coś to można text font zise zmienić żeby było okej i super cześć i czołem'
+        self.errorLabel.text = 'Information about errors will show up here'
         box_bottom.add_widget(backbutton)
         box_bottom.add_widget(self.errorLabel)
         self.layout_options.add_widget(box_bottom)

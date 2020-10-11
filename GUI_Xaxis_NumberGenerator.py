@@ -10,15 +10,20 @@ from kivy.clock import Clock
 from math import ceil
 
 class NumberGenerator(Widget):
-    def __init__(self,width,height,window_height,linewidth,options_width,timeframe, **kwargs):
+    def __init__(self,parent,height, **kwargs):
         super(NumberGenerator, self).__init__(**kwargs)
         self.iteration = 1
-        self.width = width
+        self.interface_widget = parent
+        self.options = self.interface_widget.getOptions()
+
+
+        self.OPTIONS_HEIGHT = 100
+        self.OPTIONS_WIDTH = 50
+        self.width = self.options.getInt('wwidth') - self.OPTIONS_WIDTH
         self.height = height
-        self.SPEC_LINEWIDTH = int(linewidth)
-        self.OPTIONS_WIDTH = int(options_width)
-        self.WINDOW_HEIGHT = int(window_height)
-        self.TIMEFRAME = timeframe
+        self.SPEC_LINEWIDTH = self.options.getInt('sline')
+        self.WINDOW_HEIGHT = self.options.getInt('wheight')
+        self.TIMEFRAME = 1/(self.options.getInt('fs')/self.options.getInt('chunk'))
         print('key is {0}, value is {1}, type is {2}'.format("timeframe ngeneratr",self.TIMEFRAME,type(self.TIMEFRAME)))
 
         self.baseWidths = {1: 430,
@@ -33,18 +38,17 @@ class NumberGenerator(Widget):
         self.numberLimit = ceil((self.width/self.baseWidths[self.SPEC_LINEWIDTH])*self.secPerTexture[self.SPEC_LINEWIDTH])
         self.currentNumber = 0
         self.appendNumber()
-
-        Clock.schedule_interval(self.calculate,43.06640625)
+        Clock.schedule_interval(self.calculate,self.TIMEFRAME)
 
     def appendNumber(self):
-        label = Label(text = str(self.currentNumber), pos = (self.width - 45 - self.OPTIONS_WIDTH,self.WINDOW_HEIGHT-50))
+        label = Label(text = str(self.currentNumber), pos = (self.width - self.OPTIONS_WIDTH +2,self.WINDOW_HEIGHT-60 - self.height))
         self.numbers.append(label)
         self.add_widget(label)
         self.currentNumber += 1
 
     def moveNumbers(self):
         for number in self.numbers:
-            number.pos = (number.pos[0] - self.SPEC_LINEWIDTH,self.WINDOW_HEIGHT)
+            number.pos = (number.pos[0] - self.SPEC_LINEWIDTH,self.WINDOW_HEIGHT-60 - self.height)
 
     def deleteLowestNumber(self):
         self.remove_widget(self.numbers[0])
@@ -58,6 +62,5 @@ class NumberGenerator(Widget):
             self.iteration = 0
         self.moveNumbers()
         self.iteration += 1
-        print("numbers number")
-        print(len(self.numbers))
+
 

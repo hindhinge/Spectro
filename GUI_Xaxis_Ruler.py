@@ -11,19 +11,21 @@ from math import ceil
 
 
 class Ruler(Widget):
-    def __init__(self,width,height,window_width,window_height,linewidth,options_width,timeframe, **kwargs):
+    def __init__(self,parent,height, **kwargs):
         super(Ruler, self).__init__(**kwargs)
         self.iteration = 1
+        self.interface_widget = parent
+        self.options = self.interface_widget.getOptions()
 
-        self.WINDOW_WIDTH = int(window_width)
+        self.WINDOW_WIDTH = self.options.getInt('wwidth')
         self.OPTIONS_HEIGHT = height
-        self.WINDOW_HEIGHT = int(window_height)
-        self.OPTIONS_WIDTH = options_width
-        self.TIMEFRAME = timeframe
+        self.WINDOW_HEIGHT = self.options.getInt('wheight')
+        self.OPTIONS_WIDTH = 50
+        self.TIMEFRAME = 1/(self.options.getInt('fs')/self.options.getInt('chunk'))
 
-        self.width = width
+        self.width = self.options.getInt('wwidth') - self.OPTIONS_WIDTH
         self.height = height
-        self.SPEC_LINEWIDTH = int(linewidth)
+        self.SPEC_LINEWIDTH = self.options.getInt('sline')
         self.baseNames = {1: ['timescale_1.png', 430],
                           2: ['timescale_2.png', 430],
                           3: ['timescale_3.png', 645],
@@ -40,7 +42,6 @@ class Ruler(Widget):
 
         self.getBase()
         self.createRulers()
-        print('ruler created')
 
         Clock.schedule_interval(self.moveTexture, self.TIMEFRAME)
 
@@ -87,6 +88,6 @@ class Ruler(Widget):
         with self.canvas:
             for ruler in self.rulers:
                 # print("ruler " + str(moved) + " position is " + str(positions[moved]))
-                ruler = Rectangle(texture=self.texture_base, pos=(positions[moved],self.WINDOW_HEIGHT), size=(self.basewidth, 14))
+                ruler = Rectangle(texture=self.texture_base, pos=(positions[moved],self.WINDOW_HEIGHT-self.OPTIONS_HEIGHT-50), size=(self.basewidth, 14))
                 moved += 1
         self.iteration += 1

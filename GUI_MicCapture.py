@@ -14,6 +14,7 @@ class MicCapture(Widget):
         self.parent_widget = parent
 
         self.spectrogram = None
+        self.childlist = []
 
         self.SPEC_LINEWIDTH = self.parent_widget.getOptions().getInt('sline')
         self.WINDOW_HEIGHT = self.parent_widget.getOptions().getInt('wheight')
@@ -32,6 +33,8 @@ class MicCapture(Widget):
         self.layout_mic.orientation = 'vertical'
         self.layout_mic.height = self.WINDOW_HEIGHT
         self.layout_mic.width = self.WINDOW_WIDTH
+        
+        self.layout_spectro = BoxLayout()
 
         self.add_options()
         self.add_spectro()
@@ -46,27 +49,35 @@ class MicCapture(Widget):
         layout_options.size_hint_min_y = self.OPTIONS_HEIGHT
         layout_options.size_hint_max_y = self.OPTIONS_HEIGHT
 
-        # button_file = self.xaxis
-        button_file = BoxLayout()
-        layout_options.add_widget(button_file)
+        backbutton = Button(text = '<-BACK', size_hint = (0.1,0.1))
+        backbutton.bind(on_press=partial(self.goToStartScreen, backbutton))
+        layout_options.add_widget(backbutton)
+
+        xaxis = self.xaxis
+        # button_file = BoxLayout()
+        layout_options.add_widget(xaxis)
         
         self.layout_mic.add_widget(layout_options)
 
     def add_spectro(self):
-        layout_spectro = BoxLayout()
-        layout_spectro.orientation = 'horizontal'
-        layout_spectro.size_hint_min_x = self.WINDOW_WIDTH
-        layout_spectro.size_hint_max_x = self.WINDOW_WIDTH
-        layout_spectro.size_hint_min_y = self.SPEC_HEIGHT
-        layout_spectro.size_hint_max_y = self.SPEC_HEIGHT
+        self.layout_spectro.orientation = 'horizontal'
+        self.layout_spectro.size_hint_min_x = self.WINDOW_WIDTH
+        self.layout_spectro.size_hint_max_x = self.WINDOW_WIDTH
+        self.layout_spectro.size_hint_min_y = self.SPEC_HEIGHT
+        self.layout_spectro.size_hint_max_y = self.SPEC_HEIGHT
 
-        button_file = Label(text="options")
+        button_file = Label(text="Y-Axis")
         button_file.size_hint_min_x = self.OPTIONS_WIDTH
         button_file.size_hint_max_x = self.OPTIONS_WIDTH
 
         self.spectrogram = Spectrogram(self.parent_widget)
 
-        layout_spectro.add_widget(self.spectrogram)
-        layout_spectro.add_widget(button_file)
+        self.layout_spectro.add_widget(self.spectrogram)
+        self.layout_spectro.add_widget(button_file)
 
-        self.layout_mic.add_widget(layout_spectro)
+        self.layout_mic.add_widget(self.layout_spectro)
+
+    def goToStartScreen(self,instance,*args):
+        self.spectrogram.stopClock()
+        self.spectrogram.clear_widgets()
+        self.parent_widget.back_spectro()

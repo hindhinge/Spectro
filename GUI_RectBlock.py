@@ -8,7 +8,7 @@ import pyaudio
 SPEC_LINEWIDTH = 0 # Width of a line created after one data chunk is processed
 SPEC_WIDTH = 0 # Default 1000
 SPEC_HEIGHT = 0 # Default 800
-SPEC_REFRESHDELETE = 0  # Amount of data to delete from texture array if spectrogram
+SPEC_REFRESHDELETE = 0  # Amount of data to delete from texture array if spectrogram reaches the end of the window
 
 def setOptions(options):
     global SPEC_WIDTH
@@ -77,7 +77,6 @@ class RectBlock(Widget):
         with self.canvas:
             self.rect = Rectangle(texture=self.texture, pos=self.pos, size=(self.x_size,self.y_size))
     def update_rect(self, *args):
-        print("rect pos {0}, rect size {1}".format(self.rect.pos,self.rect.size))
         self.canvas.clear()
         self.rect.pos = self.pos
         self.rect.size = self.size
