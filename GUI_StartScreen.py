@@ -8,8 +8,8 @@ class StartScreen(Widget):
     def __init__(self, parent, **kwargs):
         super(StartScreen, self).__init__(**kwargs)
         self.txt_dict = {'welcome': 'Welcome to Spectro',
-                         'description': 'This application allows you to create spectrograms from sound files located on your computer or directly from your microphone.',
-                         'source': 'Please choose the source of your signal: ',
+                         'description': 'This application allows you to create spectrograms from signal gathered directly from your microphone.',
+                         'source': 'Please configure options or start analysis: ',
                          'madeby': 'Made by Radosław Sawicki\nPolitechnika Wrocławska\nWrocław 2020'}
         self.parent_widget = parent
         self.font_size_desc = 15

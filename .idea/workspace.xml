@@ -3,16 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="87725d76-951a-49e7-b32d-87c3658fbcc5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI_Interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_Interface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI_MicCapture.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_MicCapture.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI_OptionsScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_OptionsScreen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI_RectBlock.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_RectBlock.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI_SpectroApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_SpectroApp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI_Xaxis.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_Xaxis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI_Xaxis_NumberGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_Xaxis_NumberGenerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI_Xaxis_Ruler.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_Xaxis_Ruler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI_MathController.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_MathController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI_Options.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_Options.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI_StartScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_StartScreen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/options.txt" beforeDir="false" afterPath="$PROJECT_DIR$/options.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smietnik" beforeDir="false" afterPath="$PROJECT_DIR$/smietnik" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +54,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.GUI_Interface">
+  <component name="RunManager" selected="Python.main">
     <configuration name="GUI_Interface" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Spectro" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -167,20 +162,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test6" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Spectro" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test6.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -191,11 +183,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.GUI_Interface" />
         <item itemvalue="Python.GUI_Options" />
         <item itemvalue="Python.GUI_SpectroApp" />
         <item itemvalue="Python.GUI_MathController" />
-        <item itemvalue="Python.test6" />
       </list>
     </recent_temporary>
   </component>
@@ -249,7 +241,7 @@
       <workItem from="1601909731987" duration="3445000" />
       <workItem from="1602267449361" duration="1692000" />
       <workItem from="1602316984275" duration="16613000" />
-      <workItem from="1602415934095" duration="6482000" />
+      <workItem from="1602415934095" duration="7838000" />
     </task>
     <servers />
   </component>

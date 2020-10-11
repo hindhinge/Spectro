@@ -12,7 +12,7 @@ class Options():
                          'minlin' : 1 ,
                          'maxlin' : 1 ,
                          'mindb' : -10 ,
-                         'maxdb' : 4 ,
+                         'maxdb' : 10 ,
                          'chunk' : 1024,
                          'fs' : 44100,
                          'channels' : 2}
