@@ -4,9 +4,11 @@ from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
 from functools import partial
+from kivy.graphics import *
 
 from GUI_SpectroApp import Spectrogram
 from GUI_Xaxis import Xaxis
+from GUI_Yaxis import Yaxis
 
 class MicCapture(Widget):
     def __init__(self, parent, **kwargs):
@@ -66,7 +68,7 @@ class MicCapture(Widget):
         self.layout_spectro.size_hint_min_y = self.SPEC_HEIGHT
         self.layout_spectro.size_hint_max_y = self.SPEC_HEIGHT
 
-        button_file = Label(text="Y-Axis")
+        button_file = Yaxis(self.parent_widget)
         button_file.size_hint_min_x = self.OPTIONS_WIDTH
         button_file.size_hint_max_x = self.OPTIONS_WIDTH
 

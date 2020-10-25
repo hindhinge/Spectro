@@ -1,0 +1,15 @@
+sheight:800
+swidth:1000
+wheight:900
+wwidth:1050
+sline:1
+yaxis:lin
+zaxis:log
+blackman:0
+minlin:1
+maxlin:1
+mindb:-5
+maxdb:10
+chunk:1024
+fs:44100
+channels:2

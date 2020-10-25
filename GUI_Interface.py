@@ -11,6 +11,7 @@ from GUI_Xaxis import Xaxis
 from GUI_OptionsScreen import OptionsScreen
 from GUI_Options import Options
 from kivy.core.window import Window
+from GUI_Yaxis import Yaxis
 
 
 from functools import partial
@@ -82,7 +83,8 @@ class SpectroApp(App):
     def build(self):
         interface = Interface()
         interface.setWindowDimension(interface.WINDOW_WIDTH,interface.WINDOW_HEIGHT)
-        # xaxis = Xaxis(interface)
+        # yaxis = Yaxis(interface)
+        # return yaxis
         return interface
 
         # options = OptionsScreen(self,WINDOW_WIDTH,WINDOW_HEIGHT)

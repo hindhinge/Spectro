@@ -59,6 +59,7 @@ class MathController(Widget):
     def getDft(self):
         chunk = self.rec.recordChunk()
         dft = self.genFft(chunk, self.options.getInt('fs'))
+        print("dft length {0}".format(len(dft[1])))
         return dft[1]
 
     def toDecibels(self,chunk):
@@ -109,13 +110,15 @@ class MathController(Widget):
 
     def getTextureArray(self,color):
         buffer = []
-        for i in range(len(color)):
-            rgb=color[i]
-            if type(rgb) != int:
-                for j in range(self.options.getInt('sline')):
-                    for number in rgb:
-                        buffer.append(number)
+        print("color table len {0}".format(len(color)))
+        for j in range(self.options.getInt('sline')):       #pętla for j in range(self.options.getInt('sline')):
+            for i in range(len(color)):                     # nad for i in range(len(color)) to sline definiuje szerokość
+              rgb=color[i]
+              if type(rgb) != int:                          #pętla for j in range(self.options.getInt('sline')):
+                for number in rgb:                          #nad for number in rgb sline definiuje wysokość
+                    buffer.append(number)
         arr = array('B',buffer)
+        print("buffer table len {0}".format(len(buffer)))
         return arr
 
     def getBlackTexture(self):
