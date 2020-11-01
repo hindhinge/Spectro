@@ -79,18 +79,18 @@ class Interface(Widget):
         self.layout_main.add_widget(self.screen_start)
 
 
-class SpectroApp(App):
-    def build(self):
-        interface = Interface()
-        interface.setWindowDimension(interface.WINDOW_WIDTH,interface.WINDOW_HEIGHT)
-        # yaxis = Yaxis(interface)
-        # return yaxis
-        return interface
-
-        # options = OptionsScreen(self,WINDOW_WIDTH,WINDOW_HEIGHT)
-        # return options
-
-SpectroApp().run()
+# class SpectroApp(App):
+#     def build(self):
+#         interface = Interface()
+#         interface.setWindowDimension(interface.WINDOW_WIDTH,interface.WINDOW_HEIGHT)
+#         # yaxis = Yaxis(interface)
+#         # return yaxis
+#         return interface
+#
+#         # options = OptionsScreen(self,WINDOW_WIDTH,WINDOW_HEIGHT)
+#         # return options
+#
+# SpectroApp().run()
         
 
 

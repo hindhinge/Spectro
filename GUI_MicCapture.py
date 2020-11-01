@@ -9,6 +9,7 @@ from kivy.graphics import *
 from GUI_SpectroApp import Spectrogram
 from GUI_Xaxis import Xaxis
 from GUI_Yaxis import Yaxis
+from GUI_ColorScale import ColorScale
 
 class MicCapture(Widget):
     def __init__(self, parent, **kwargs):
@@ -74,8 +75,10 @@ class MicCapture(Widget):
 
         self.spectrogram = Spectrogram(self.parent_widget)
 
+
         self.layout_spectro.add_widget(self.spectrogram)
         self.layout_spectro.add_widget(button_file)
+        self.layout_spectro.add_widget(ColorScale(self.parent_widget))
 
         self.layout_mic.add_widget(self.layout_spectro)
 

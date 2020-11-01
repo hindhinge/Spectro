@@ -43,8 +43,20 @@ class MathController(Widget):
 
     def microProcessing(self,dt):
         dft = self.getDft()
-        dbs = self.toDecibels(dft)
-        db_color = self.genColorsDB(dbs)
+
+        if self.options.get('zaxis') == 'lin':
+            dbs = dft[0:self.options.getInt('sheight')]
+            dbs = dbs[::-1]
+        else:
+            dbs = self.toDecibels(dft)
+
+        if self.options.get("blackman") == 1:
+            bwindow = np.blackman(len(dbs))
+            sig = np.multiply(bwindow,dbs)
+            db_color = self.genColorsDB(sig)
+        else:
+            db_color = self.genColorsDB(dbs)
+
         tex_array = self.getTextureArray(db_color)
         self.widenRectBlock(tex_array)
 
@@ -78,8 +90,12 @@ class MathController(Widget):
 
     def genColorsDB(self,dbs):
         signal = dbs
-        max_value = self.options.getInt('maxdb')
-        min_value = self.options.getInt('mindb')
+        if self.options.get('zaxis') == 'lin':
+            max_value = self.options.getFloat('maxlin')
+            min_value = self.options.getFloat('minlin')
+        else:
+            max_value = self.options.getInt('maxdb')
+            min_value = self.options.getInt('mindb')
         output = []
         resolution = (max_value - min_value) / 1275
         for value in signal:

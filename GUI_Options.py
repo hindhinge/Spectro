@@ -9,8 +9,8 @@ class Options():
                          'yaxis' : 'lin' ,
                          'zaxis' : 'log' ,
                          'blackman' : 0 ,
-                         'minlin' : 1 ,
-                         'maxlin' : 1 ,
+                         'minlin' : 0.1 ,
+                         'maxlin' : 10 ,
                          'mindb' : -10 ,
                          'maxdb' : 10 ,
                          'chunk' : 1024,
@@ -56,6 +56,9 @@ class Options():
 
     def getInt(self,key):
         return int(self.current_options[key])
+
+    def getFloat(self,key):
+        return float(self.current_options[key])
 
     def set(self,key,value):
         self.current_options[key] = value

@@ -16,6 +16,7 @@ class Yaxis(Widget):
         self.height = self.SPEC_HEIGHT
         self.width = self.OPTIONS_WIDTH
         self.pos = (self.WINDOW_WIDTH-50,0)
+        self.rulerIncrement = int(self.options.getInt('fs')/self.options.getInt('chunk'))*42
 
         self.rulers = [] #Every widget is responsible for one ruler containing 4000Hz
 
@@ -45,7 +46,7 @@ class Yaxis(Widget):
             ruler = Ruler(int(self.WINDOW_WIDTH-50),int(i*42))
             layout_ruler.add_widget(ruler)
 
-            text_number = "{0}".format(((rulerAmount+1)*1764)-((i+1)*1764))
+            text_number = "{0}".format(((rulerAmount+1)*self.rulerIncrement)-((i+1)*self.rulerIncrement))
             label = Label(text=text_number,font_size = 7)
             layout_numbers.add_widget(label)
 

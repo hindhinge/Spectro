@@ -573,10 +573,15 @@ class OptionsScreen(Widget):
 
     def validateOthers(self,key):
         try:
-            value = int(self.input_fields[key].text)
+            if key == 'minlin' or key == 'maxlin':
+                value = float(self.input_fields[key].text)
+            else:
+                value = int(self.input_fields[key].text)
         except ValueError:
             if self.input_fields[key].text == '':
                 self.input_fields[key].text = ''
+            if self.input_fields[key].text[0] =='-':
+                pass
             else:
                 self.errorLabel.text = 'ERROR: {0} value must be a number'.format(key)
                 value = self.parent_widget.getOptions().defaults[key]
@@ -593,8 +598,8 @@ class OptionsScreen(Widget):
         dimension_keys = ['sheight','swidth','wheight','wwidth']
         other_keys = ['sline', 'minlin', 'maxlin', 'mindb', 'maxdb', 'channels']
         minmax_dict = {'sline': (1, 5),
-                       'minlin': (1, 1),
-                       'maxlin': (1, 1),
+                       'minlin': (-100, 100),
+                       'maxlin': (-100, 100),
                        'mindb': (-100, 100),
                        'maxdb': (-100, 100),
                        'channels': (1, 2)}
@@ -626,21 +631,21 @@ class OptionsScreen(Widget):
             if self.input_fields[key].text == '':
                 self.input_fields[key].text = str(self.parent_widget.getOptions().defaults[key])
                 self.errorLabel.text = 'ERROR: {0} field cannot be left empty - changing to default.'.format(key)
-            elif int(value) < minmax_dict[key][0]:
+            elif float(value) < minmax_dict[key][0]:
                 value = minmax_dict[key][0]
                 self.input_fields[key].text = str(value)
                 self.errorLabel.text = 'ERROR: {0} value must be between {1} and {2}. Changing to {1}'.format(key,minmax_dict[key][0],minmax_dict[key][1])
-            elif int(value) > minmax_dict[key][1]:
+            elif float(value) > minmax_dict[key][1]:
                 value = minmax_dict[key][1]
                 self.input_fields[key].text = str(value)
                 self.errorLabel.text = 'ERROR: {0} value must be between {1} and {2}. Changing to {2}'.format(key,minmax_dict[key][0],minmax_dict[key][1])
             if key == 'mindb' or key == 'minlin':
-                if int(self.input_fields[key].text) > int(self.input_fields[counterparts_colors[key]].text):
+                if float(self.input_fields[key].text) > float(self.input_fields[counterparts_colors[key]].text):
                     self.input_fields[key].text = str(self.parent_widget.getOptions().defaults[key])
                     self.input_fields[counterparts_colors[key]].text = str(self.parent_widget.getOptions().defaults[counterparts_colors[key]])
                     self.errorLabel.text = 'ERROR: Minimal value must be smaller than maximal. Returning both to default.'
             if key == 'maxdb' or key == 'maxlin':
-                if int(self.input_fields[key].text) < int(self.input_fields[counterparts_colors[key]].text):
+                if float(self.input_fields[key].text) < float(self.input_fields[counterparts_colors[key]].text):
                     self.input_fields[key].text = str(self.parent_widget.getOptions().defaults[key])
                     self.input_fields[counterparts_colors[key]].text = str(self.parent_widget.getOptions().defaults[counterparts_colors[key]])
                     self.errorLabel.text = 'ERROR: Maximal value must be bigger than minimal. Returning both to default.'
@@ -682,6 +687,8 @@ class OptionsScreen(Widget):
                     value = 1
                 else:
                     value = 0
+            elif key == 'maxlin' or key == 'minlin':
+                value = float(self.input_fields[key].text)
             else:
                 value = int(self.input_fields[key].text)
             options = self.parent_widget.getOptions()
